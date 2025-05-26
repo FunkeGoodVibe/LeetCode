@@ -39,4 +39,4 @@ class Solution:
             elif count:
                 to_remove += 1
                 count -= 1
-        return to_remove
+        return to_remove 

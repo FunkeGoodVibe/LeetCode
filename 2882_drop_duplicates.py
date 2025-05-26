@@ -1,9 +1,6 @@
 '''
 2882. Drop Duplicate Rows
-Solved
-Easy
-Companies
-Hint
+
 DataFrame customers
 +-------------+--------+
 | Column Name | Type   |
