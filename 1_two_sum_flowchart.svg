@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="900" viewBox="0 0 980 900" role="img" aria-labelledby="title desc">
+  <title id="title">Two Sum Flow Chart</title>
+  <desc id="desc">A visual flow chart summarising the hash map logic used to solve the Two Sum problem.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#334155" />
+    </marker>
+    <style>
+      .page { fill: #f8fafc; }
+      .title { font: 700 34px Arial, sans-serif; fill: #0f172a; }
+      .subtitle { font: 400 17px Arial, sans-serif; fill: #475569; }
+      .box { fill: #ffffff; stroke: #2563eb; stroke-width: 2.5; rx: 12; }
+      .decision { fill: #fff7ed; stroke: #ea580c; stroke-width: 2.5; }
+      .success { fill: #ecfdf5; stroke: #059669; stroke-width: 2.5; rx: 12; }
+      .fallback { fill: #f1f5f9; stroke: #64748b; stroke-width: 2.5; rx: 12; }
+      .text { font: 600 17px Arial, sans-serif; fill: #0f172a; text-anchor: middle; }
+      .small { font: 500 15px Arial, sans-serif; fill: #334155; text-anchor: middle; }
+      .label { font: 700 14px Arial, sans-serif; fill: #334155; text-anchor: middle; }
+      .arrow { stroke: #334155; stroke-width: 2.5; fill: none; marker-end: url(#arrow); }
+    </style>
+  </defs>
+
+  <rect class="page" width="980" height="900" />
+  <text class="title" x="490" y="58" text-anchor="middle">Two Sum</text>
+  <text class="subtitle" x="490" y="88" text-anchor="middle">Find two indices whose values add to the target</text>
+
+  <rect class="box" x="320" y="125" width="340" height="70" />
+  <text class="text" x="490" y="153">Start with nums</text>
+  <text class="small" x="490" y="176">and target</text>
+
+  <line class="arrow" x1="490" y1="195" x2="490" y2="225" />
+  <rect class="box" x="320" y="225" width="340" height="70" />
+  <text class="text" x="490" y="253">Create seen map</text>
+  <text class="small" x="490" y="276">number -> index</text>
+
+  <line class="arrow" x1="490" y1="295" x2="490" y2="325" />
+  <path class="decision" d="M490 325 L675 405 L490 485 L305 405 Z" />
+  <text class="text" x="490" y="392">More numbers?</text>
+  <text class="small" x="490" y="417">loop through nums</text>
+
+  <line class="arrow" x1="675" y1="405" x2="785" y2="405" />
+  <text class="label" x="730" y="387">No</text>
+  <rect class="fallback" x="785" y="370" width="150" height="70" />
+  <text class="text" x="860" y="399">Return []</text>
+  <text class="small" x="860" y="421">fallback only</text>
+
+  <line class="arrow" x1="490" y1="485" x2="490" y2="520" />
+  <text class="label" x="515" y="507">Yes</text>
+  <rect class="box" x="320" y="520" width="340" height="70" />
+  <text class="text" x="490" y="548">Read index and num</text>
+  <text class="small" x="490" y="571">from enumerate nums</text>
+
+  <line class="arrow" x1="490" y1="590" x2="490" y2="620" />
+  <rect class="box" x="320" y="620" width="340" height="70" />
+  <text class="text" x="490" y="648">Calculate complement</text>
+  <text class="small" x="490" y="671">target - num</text>
+
+  <line class="arrow" x1="490" y1="690" x2="490" y2="720" />
+  <path class="decision" d="M490 720 L675 790 L490 860 L305 790 Z" />
+  <text class="text" x="490" y="779">Complement</text>
+  <text class="small" x="490" y="803">already in seen?</text>
+
+  <line class="arrow" x1="675" y1="790" x2="785" y2="790" />
+  <text class="label" x="730" y="772">Yes</text>
+  <rect class="success" x="785" y="755" width="150" height="70" />
+  <text class="text" x="860" y="784">Return indices</text>
+  <text class="small" x="860" y="806">seen[comp], index</text>
+
+  <path class="arrow" d="M305 790 H205 V405 H295" />
+  <text class="label" x="205" y="746">No</text>
+  <text class="label" x="205" y="768">save num:index</text>
+  <text class="label" x="205" y="790">then continue</text>
+</svg>
