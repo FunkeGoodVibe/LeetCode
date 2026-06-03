@@ -54,4 +54,3 @@ class Solution:
 
         # LeetCode says there is exactly one solution, so this should not happen.
         return []
-

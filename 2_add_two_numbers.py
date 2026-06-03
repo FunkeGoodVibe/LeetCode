@@ -19,24 +19,32 @@ from typing import Optional
 
 
 class Solution:
-    def addTwoNumbers(
-        self, l1: Optional["ListNode"], l2: Optional["ListNode"]
-    ) -> Optional["ListNode"]:
+    def addTwoNumbers(self, l1: Optional["ListNode"], l2: Optional["ListNode"]) -> Optional["ListNode"]:
+
+        # Use a dummy head so new result nodes can be appended without
+        # special-casing the first node.
         dummy = ListNode()
         current = dummy
         carry = 0
 
+        # Continue while either list has digits left, or while a final carry
+        # still needs to become its own node.
         while l1 or l2 or carry:
+            # Missing nodes count as 0 once one list is shorter than the other.
             val1 = l1.val if l1 else 0
             val2 = l2.val if l2 else 0
 
+            # Add the two digits and any carry from the previous column.
             total = val1 + val2 + carry
             carry = total // 10
 
+            # Store only the ones digit in this result node.
             current.next = ListNode(total % 10)
             current = current.next
 
+            # Move each input list forward if it still has nodes left.
             l1 = l1.next if l1 else None
             l2 = l2.next if l2 else None
 
+        # The real result starts after the dummy head.
         return dummy.next
